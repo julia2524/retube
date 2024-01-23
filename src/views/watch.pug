@@ -1,0 +1,35 @@
+extends base
+
+block content
+    div#videoContainer(data-id=video._id)
+        video(src="/" + video.fileUrl,autoplay="true", muted="true")
+        div#videoControls
+            div
+                input(type="range", min=0, step=0.01, value=0)#timeline
+            div.videoControls__rest
+                div.videoControls__play
+                    span#play
+                        i.fas.fa-pause
+                    div.videoControls__volume
+                        span#mute 
+                            i.fas.fa-volume-mute 
+                        input(type="range", min=0, max=1, step=0.1, value=0)#volume
+                    div.videoControls__time
+                        span#currentTime 0:00
+                        span  /
+                        span#totalTime 0:00
+                div
+                    span#fullScreen 
+                        i.fas.fa-expand
+    div.video__data
+        p.video__title=video.description
+        small.video__description=video.createdAt
+        small.video__owner Uploaded by 
+           a(href=`/users/${video.owner._id}`) #{video.owner.name? video.owner.name : "Anonymous"}
+        br
+        if String(loggedInUser._id) == String(video.owner._id)
+            a(href=`${video.id}/edit`) Edit Video &rarr;
+            a(href=`${video.id}/delete`) Delete Video &rarr;
+            
+block scripts 
+    script(src="/static/js/videoPlayer.js")

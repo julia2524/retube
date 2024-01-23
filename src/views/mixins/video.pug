@@ -1,0 +1,9 @@
+mixin video(video)
+    a(href=`/videos/${video.id}`).video-mixin
+        div.video-mixin__thumb(style=`background-image:url(${video.thumbUrl? video.thumbUrl : `img/empty-box.png`});background-size:contain;background-position:center;`)
+        div.video-mixin__data
+            span.video-mixin__title=video.title
+            div.video-mixin__meta
+                div #{video.owner.name? video.owner.name : "Anonymous"}
+                span 조회수 #{video.meta.views}회 ∙
+                span=new Date(video.createdAt).toLocaleDateString("ko-kr", {weekday:'long', year:'numeric', month:'long', day:'numeric'})

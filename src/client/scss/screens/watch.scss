@@ -1,0 +1,95 @@
+.video__data {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  .video__title {
+    font-size: 26px;
+    margin-bottom: 5px;
+  }
+  .video__createdAt {
+    font-size: 12px;
+  }
+  .video__owner {
+    margin-bottom: 5px;
+    font-size: 14px;
+    a {
+      color: cornflowerblue;
+      text-decoration: underline;
+    }
+  }
+}
+
+.video__comments-nb {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+.vidio__add-comments {
+  margin: 20px 0;
+}
+#commentForm {
+  border: none;
+  max-width: 100%;
+  padding: 0;
+  position: relative;
+  textarea {
+    border-style: none;
+    width: 100%;
+    border-bottom: solid;
+    padding: 0;
+    margin-bottom: 0;
+    resize: none;
+    &:focus {
+      outline: none;
+    }
+  }
+  button {
+    position: absolute;
+    right: 10px;
+    bottom: -50px;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+.video__comments {
+  margin: 0;
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    li {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 400;
+      i {
+        margin: 0 5px;
+      }
+    }
+  }
+  width: 100%;
+  margin-top: 20px;
+  .video__comment {
+    padding: 10px 0px;
+    border-radius: 9999px;
+    color: black;
+    margin-bottom: 10px;
+    .delete__btn {
+      display: inline-block;
+      border-radius: 20px;
+      padding: 3px 13px 3px 5px;
+      align-items: center;
+      &:hover {
+        background-color: rgba(red, 0.5);
+        cursor: pointer;
+      }
+    }
+  }
+}
