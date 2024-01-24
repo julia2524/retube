@@ -5,7 +5,6 @@ import fetch from "node-fetch";
 
 export const logout = (req, res) => {
   req.session.destroy();
-  req.flash("info", "Bye Bye");
   return res.redirect("/");
 };
 export const getEdit = (req, res) => {
