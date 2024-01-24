@@ -87,7 +87,7 @@ textarea.addEventListener("input", (event) => {
   if (lines == 1) {
     textarea.scrollHeight = 0;
   }
-  if (lines > textarea.oldLines) {
+  if (lines !== textarea.oldLines) {
     textarea.style.height = lines * initialHeight + "px";
     console.log(lines);
     console.log(textarea.style.height);
